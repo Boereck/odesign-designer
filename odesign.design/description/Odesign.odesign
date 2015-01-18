@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Odesign" version="8.1.0">
+  <ownedViewpoints label="Style">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" label="Layer Styles" domainClass="description.Layer">
+      <defaultLayer name="Default" label="Element Based Edge">
+        <edgeMappings name="ElementBasedEdgeDef" label="Element Based Edge" sourceMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']/@subNodeMappings[name='EdgeBeginNode']" targetMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']/@subNodeMappings[name='EdgeEndNode']" targetFinderExpression="[self/]" sourceFinderExpression="[self/]" domainClass="description.EdgeMapping" useDomainElement="true">
+          <conditionnalStyles predicateExpression="[self.style.oclIsTypeOf(EdgeStyleDescription)/]">
+            <style strokeColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByStrokeColor']" lineStyle="dash_dot" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]"/>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.style.oclIsTypeOf(BracketEdgeStyleDescription)/]">
+            <style xsi:type="style:BracketEdgeStyleDescription" strokeColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByStrokeColor']" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]"/>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.style.oclIsUndefined()/]">
+            <style lineStyle="dash" sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription showIcon="false" labelExpression="Style undefined!">
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <edgeMappings name="SourceMappingEdge" label="Source Mapping" sourceMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']" targetMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']" targetFinderExpression="feature:sourceMapping">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="source">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="TargetMappingEdge" label="Target Mapping" sourceMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']" targetMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']" targetFinderExpression="feature:targetMapping">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="target">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ImportedNodeMappingEdge" label="Imported Node Mapping" sourceMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']" targetMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']" targetFinderExpression="[self.importedMapping/]">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ImportedContainerMappingEdge" label="Imported Container Mapping" sourceMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']" targetMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']" targetFinderExpression="[self.importedMapping/]">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ImportedEdgeMappingEdge" label="Imported Edge Mapping" sourceMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeImportContainer']" targetMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']" targetFinderExpression="[self.importedMapping/]">
+          <style targetArrow="InputClosedArrow" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="NodeContainer" label="Node" semanticCandidatesExpression="feature:nodeMappings" domainClass="description.NodeMapping">
+          <subNodeMappings name="BasicShapeStyleNode" label="Basic Shape Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.BundledImageDescription">
+            <style xsi:type="style:BundledImageDescription" borderSizeComputationExpression="[if self.borderSizeComputationExpression.toInteger().oclIsInvalid() then 0 else self.borderSizeComputationExpression.toInteger() endif/]" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression.toString()/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" tooltipExpression="[self.tooltipExpression/]" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]" resizeKind="NSEW" color="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByColor']"/>
+          </subNodeMappings>
+          <subNodeMappings name="EllipseStyleNode" label="Ellipse Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.EllipseNodeDescription">
+            <style xsi:type="style:EllipseNodeDescription" borderSizeComputationExpression="[if self.borderSizeComputationExpression.toInteger().oclIsInvalid() then 0 else self.borderSizeComputationExpression.toInteger() endif/]" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression.toString()/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" labelAlignment="LEFT" tooltipExpression="[self.tooltipExpression/]" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]" resizeKind="NSEW" color="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByColor']" horizontalDiameterComputationExpression="[if self.horizontalDiameterComputationExpression.toInteger().oclIsInvalid() then 0 else self.horizontalDiameterComputationExpression.toInteger() endif/]" verticalDiameterComputationExpression="[if self.verticalDiameterComputationExpression.toInteger().oclIsInvalid() then 0 else self.verticalDiameterComputationExpression.toInteger() endif/]"/>
+          </subNodeMappings>
+          <subNodeMappings name="DotStyleNode" label="Dot Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.DotDescription">
+            <style xsi:type="style:DotDescription" borderSizeComputationExpression="[if self.borderSizeComputationExpression.toInteger().oclIsInvalid() then 0 else self.borderSizeComputationExpression.toInteger() endif/]" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression.toString()/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" tooltipExpression="[self.tooltipExpression/]" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]" resizeKind="NSEW" backgroundColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBackgroundColor']" strokeSizeComputationExpression="[if self.strokeSizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.strokeSizeComputationExpression.toInteger() endif/]"/>
+          </subNodeMappings>
+          <subNodeMappings name="GaugeStyleNode" label="Gauge Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.GaugeCompositeStyleDescription">
+            <style xsi:type="style:GaugeCompositeStyleDescription" borderSizeComputationExpression="[if self.borderSizeComputationExpression.toInteger().oclIsInvalid() then 0 else self.borderSizeComputationExpression.toInteger() endif/]" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression.toString()/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" tooltipExpression="[self.tooltipExpression/]" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]" resizeKind="NSEW"/>
+          </subNodeMappings>
+          <subNodeMappings name="WorkspaceImageStyleNode" label="Workspace Image Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.WorkspaceImageDescription">
+            <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="[if self.borderSizeComputationExpression.toInteger().oclIsInvalid() then 0 else self.borderSizeComputationExpression.toInteger() endif/]" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression.toString()/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" tooltipExpression="[self.tooltipExpression/]" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]" resizeKind="NSEW"/>
+          </subNodeMappings>
+          <subNodeMappings name="LozengeStyleNode" label="Lozenge Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.LozengeNodeDescription">
+            <style xsi:type="style:LozengeNodeDescription" borderSizeComputationExpression="[if self.borderSizeComputationExpression.toInteger().oclIsInvalid() then 0 else self.borderSizeComputationExpression.toInteger() endif/]" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression.toString()/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" tooltipExpression="[self.tooltipExpression/]" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]" resizeKind="NSEW" widthComputationExpression="[if self.widthComputationExpression.toInteger().oclIsInvalid() then 0 else self.widthComputationExpression.toInteger() endif/]" heightComputationExpression="[if self.heigtComputationExpression.toInteger().oclIsInvalid() then 0 else self.heigtComputationExpression.toInteger() endif/]" color="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByColor']"/>
+          </subNodeMappings>
+          <subNodeMappings name="NoteStyleNode" label="Note Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.NoteDescription">
+            <style xsi:type="style:NoteDescription" borderSizeComputationExpression="[if self.borderSizeComputationExpression.toInteger().oclIsInvalid() then 0 else self.borderSizeComputationExpression.toInteger() endif/]" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression.toString()/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" tooltipExpression="[self.tooltipExpression/]" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]" resizeKind="NSEW" color="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByColor']"/>
+          </subNodeMappings>
+          <subNodeMappings name="SquareStyleNode" label="Square Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.SquareDescription">
+            <style xsi:type="style:SquareDescription" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression.toString()/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" tooltipExpression="[self.tooltipExpression/]" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]" resizeKind="NSEW" color="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByColor']"/>
+          </subNodeMappings>
+          <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="BorderedNodeContainer" label="Bordered Node" semanticCandidatesExpression="feature:borderedNodeMappings" domainClass="description.NodeMapping" reusedNodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']/@subNodeMappings[name='EdgeBeginNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']/@subNodeMappings[name='EdgeEndNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']" reusedContainerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subContainerMappings[name='BorderedNodeContainer']" importedMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']"/>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" labelExpression="[if self.label.oclIsUndefined() then self.name.toString() else self.label.toString() endif + ' [' + self.domainClass.toString() + ']'/]" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ContainerContainer" label="Container" semanticCandidatesExpression="feature:containerMappings" domainClass="description.ContainerMapping">
+          <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="NodeImport" label="Node" semanticCandidatesExpression="feature:subNodeMappings" reusedNodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']" reusedContainerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subContainerMappings[name='BorderedNodeContainer']" importedMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']"/>
+          <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="ContainerImport" label="Container" semanticCandidatesExpression="feature:subContainerMappings" reusedContainerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ContainerImport'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='NodeImport'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ParallelogramStyle'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='BorderedNodeMapping']" importedMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']"/>
+          <subContainerMappings name="GradientStyle" label="Gradient Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.FlatContainerStyleDescription">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="[if self.borderSizeComputationExpression.toInteger().oclIsInvalid() then 0 else self.borderSizeComputationExpression.toInteger() endif/]" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" tooltipExpression="[self.tooltipExpression/]" widthComputationExpression="[if self.widthComputationExpression.toInteger().oclIsInvalid() then 0 else self.widthComputationExpression.toInteger() endif/]" heightComputationExpression="[if self.heightComputationExpression.toInteger().oclIsInvalid() then 0 else self.heightComputationExpression.toInteger() endif/]" backgroundStyle="Liquid" backgroundColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBackgroundColor']" foregroundColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByForegroundColor']"/>
+          </subContainerMappings>
+          <subContainerMappings name="ParallelogramStyle" label="Parallelogram Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.ShapeContainerStyleDescription">
+            <style xsi:type="style:ShapeContainerStyleDescription" borderSizeComputationExpression="[if self.borderSizeComputationExpression.toInteger().oclIsInvalid() then 0 else self.borderSizeComputationExpression.toInteger() endif/]" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" tooltipExpression="[self.tooltipExpression/]" widthComputationExpression="[if self.widthComputationExpression.toInteger().oclIsInvalid() then 0 else self.widthComputationExpression.toInteger() endif/]" heightComputationExpression="[if self.heightComputationExpression.toInteger().oclIsInvalid() then 0 else self.heightComputationExpression.toInteger() endif/]" backgroundColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBackgroundColor']"/>
+          </subContainerMappings>
+          <subContainerMappings name="WorkspaceImageContainerStyle" label="Workspace Image Style" semanticCandidatesExpression="[self.conditionnalStyles.style->including(self.style)/]" domainClass="style.WorkspaceImageDescription">
+            <style xsi:type="style:WorkspaceImageDescription" borderSizeComputationExpression="[if self.borderSizeComputationExpression.toInteger().oclIsInvalid() then 0 else self.borderSizeComputationExpression.toInteger() endif/]" borderColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByBorderColor']" labelExpression="[self.labelExpression/]" labelColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByLabelColor']" tooltipExpression="[self.tooltipExpression/]" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]"/>
+          </subContainerMappings>
+          <subContainerMappings xsi:type="description_1:ContainerMappingImport" name="BorderedNodeMapping" label="Container Bordered Node" semanticCandidatesExpression="feature:borderedNodeMappings" domainClass="description.NodeMapping" reusedNodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']/@subNodeMappings[name='EdgeBeginNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']/@subNodeMappings[name='EdgeEndNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']" reusedContainerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subContainerMappings[name='BorderedNodeContainer']" importedMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']"/>
+          <style xsi:type="style:FlatContainerStyleDescription" labelExpression="[if self.label.oclIsUndefined() then self.name.toString() else self.label.toString() endif + ' [' + self.domainClass.toString() + ']'/]" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="EdgeContainer" label="Edge" semanticCandidatesExpression="[self.edgeMappings/]" domainClass="description.EdgeMapping">
+          <subNodeMappings name="EdgeBeginNode" semanticCandidatesExpression="[self/]" synchronizationLock="true" domainClass="description.EdgeMapping">
+            <style xsi:type="style:DotDescription" showIcon="false" labelExpression="" sizeComputationExpression="0" hideLabelByDefault="true" strokeSizeComputationExpression="0">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="EdgeEndNode" semanticCandidatesExpression="[self/]" synchronizationLock="true" domainClass="description.EdgeMapping">
+            <style xsi:type="style:DotDescription" showIcon="false" labelExpression="" sizeComputationExpression="0" hideLabelByDefault="true" strokeSizeComputationExpression="0">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="10" arcHeight="10" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </containerMappings>
+        <containerMappings xsi:type="description_1:ContainerMappingImport" name="EdgeImportContainer" label="Edge Import" semanticCandidatesExpression="[self.edgeMappingImports/]" domainClass="description.EdgeMappingImport" importedMapping="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']"/>
+        <toolSections name="DiagramElementsSection" label="Diagram Elements">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ContainerCreation" label="Container" precondition="[container.oclIsKindOf(Layer) or container.oclIsKindOf(ContainerMapping)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']" extraMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="[container.oclIsKindOf(Layer)/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ContainerMapping" referenceName="containerMappings"/>
+                </cases>
+                <cases conditionExpression="[container.oclIsKindOf(ContainerMapping)/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ContainerMapping" referenceName="subContainerMappings"/>
+                </cases>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ContainerImportCreation" label="Container Import" precondition="[container.oclIsKindOf(Layer) or container.oclIsKindOf(ContainerMapping)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']" iconPath="/org.eclipse.sirius.diagram.ui/icons/full/obj16/ContainerMappingImport.gif" extraMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="[container.oclIsKindOf(Layer)/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ContainerMappingImport" referenceName="containerMappings"/>
+                </cases>
+                <cases conditionExpression="[container.oclIsKindOf(ContainerMapping)/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ContainerMappingImport" referenceName="subContainerMappings"/>
+                </cases>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ImportedContainerMappingCreation" label="Imported Container Mapping" precondition="[preSource &lt;> preTarget and preTarget.oclIsKindOf(ContainerMapping)/]" edgeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ImportedContainerMappingEdge']" connectionStartPrecondition="[preSource.oclIsKindOf(ContainerMappingImport)/]">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="importedMapping" valueExpression="[target/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="NodeCreation" label="Node" precondition="[container.oclIsKindOf(Layer) or container.oclIsKindOf(ContainerMapping)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']" extraMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="[container.oclIsKindOf(Layer)/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="description.NodeMapping" referenceName="nodeMappings"/>
+                </cases>
+                <cases conditionExpression="[container.oclIsKindOf(ContainerMapping)/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="description.NodeMapping" referenceName="subNodeMappings"/>
+                </cases>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="NodeImportCreation" label="Node Import" precondition="[container.oclIsKindOf(Layer) or container.oclIsKindOf(ContainerMapping)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']" iconPath="/org.eclipse.sirius.diagram.ui/icons/full/obj16/NodeMappingImport.gif" extraMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:Switch">
+                <cases conditionExpression="[container.oclIsKindOf(Layer)/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="description.NodeMappingImport" referenceName="nodeMappings"/>
+                </cases>
+                <cases conditionExpression="[container.oclIsKindOf(ContainerMapping)/]">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="description.NodeMappingImport" referenceName="subNodeMappings"/>
+                </cases>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ImportedNodeMappingCreation" label="Imported Node Mapping" precondition="[preSource &lt;> preTarget and preTarget.oclIsKindOf(NodeMapping)/]" edgeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ImportedNodeMappingEdge']" connectionStartPrecondition="[preSource.oclIsKindOf(NodeMappingImport)/]">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="importedMapping" valueExpression="[target/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="BorderedNodeCreation" label="Bordered Node" precondition="[container.oclIsKindOf(AbstractNodeMapping)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']" iconPath="/org.eclipse.sirius.diagram.ui/icons/obj16/BorderedNodeMapping.gif" extraMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.NodeMapping" referenceName="borderedNodeMappings"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="BorderedNodeCreationImport" label="Bordered Node Import" precondition="[container.oclIsKindOf(AbstractNodeMapping)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']" iconPath="/org.eclipse.sirius.diagram.ui/icons/obj16/BorderedNodeMappingImport.gif" extraMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer'] //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.NodeMappingImport" referenceName="borderedNodeMappings"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="ImportedEdgeMappingCreation" label="Imported Edge Mapping" precondition="[preSource &lt;> preTarget and preTarget.oclIsKindOf(EdgeMapping)/]" edgeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ImportedEdgeMappingEdge']" connectionStartPrecondition="[ preSource.oclIsKindOf(EdgeMappingImport)/]">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="importedMapping" valueExpression="[target/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="ElementBasedEdgeGroup" label="Element Based Edges">
+            <tools xsi:type="tool:ContainerCreationDescription" name="EdgeContainerCreation" label="Element Based Edge" precondition="[container.oclIsKindOf(Layer)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.EdgeMapping" referenceName="edgeMappings">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="useDomainElement" valueExpression="[true/]"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.EdgeStyleDescription" referenceName="style" variableName="edgeStyle"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ContainerCreationDescription" name="EdgeContainerCreation" label="Element Based Bracket Edge" precondition="[container.oclIsKindOf(Layer)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.EdgeMapping" referenceName="edgeMappings">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="useDomainElement" valueExpression="[true/]"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.BracketEdgeStyleDescription" referenceName="style" variableName="edgeStyle"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="RelationBasedEdgeGroup" label="Relation Based Edges">
+            <tools xsi:type="tool:ContainerCreationDescription" name="RelationBasedEdgeCreation" label="Relation Based Edge" precondition="[container.oclIsKindOf(Layer)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.EdgeMapping" referenceName="edgeMappings">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.EdgeStyleDescription" referenceName="style" variableName="edgeStyle"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ContainerCreationDescription" name="RelationBasedBracketEdgeCreation" label="Relation Based Bracket Edge" precondition="[container.oclIsKindOf(Layer)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeContainer']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.EdgeMapping" referenceName="edgeMappings">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.BracketEdgeStyleDescription" referenceName="style" variableName="edgeStyle"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="EdgeImportCreation" label="Edge Import" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='EdgeImportContainer']" iconPath="/org.eclipse.sirius.diagram.ui/icons/full/obj16/EdgeMappingImport.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.EdgeMappingImport" referenceName="edgeMappingImports"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SourceEdgeCreation" label="Edge Source End" edgeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='SourceMappingEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="sourceMapping" valueExpression="[self.sourceMapping->including(target)/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="TargetEdgeCreation" label="Edge Target End" edgeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='TargetMappingEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="sourceMapping" valueExpression="[self.targetMapping->including(target)/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="NodeStylesSection" label="Node Styles">
+          <ownedTools xsi:type="tool:ToolGroup" name="EllipseStyleCreationGroup" label="Ellipse Styles">
+            <tools xsi:type="tool:NodeCreationDescription" name="EllipseStyleCreation" label="Ellipse Style" precondition="[container.oclIsKindOf(NodeMapping) and container.style.oclIsUndefined()/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.EllipseNodeDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="ConditionalEllipseStyleCreation" label="Conditional Ellipse Style" precondition="[container.oclIsKindOf(NodeMapping)/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalNodeStyleDescription" referenceName="conditionnalStyles">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.EllipseNodeDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="BasicShapeStyleCreationGroup" label="Basic Shape Styles">
+            <tools xsi:type="tool:NodeCreationDescription" name="BasicShapeStyleCreation" label="Basic Shape Style" precondition="[container.oclIsKindOf(NodeMapping) and container.style.oclIsUndefined()/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.BundledImageDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="Conditional BasicShapeStyleCreation" label="Conditional Basic Shape Style" precondition="[container.oclIsKindOf(NodeMapping)/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalNodeStyleDescription" referenceName="conditionnalStyles">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.BundledImageDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="DotStyleCreationGroup" label="Dot Styles">
+            <tools xsi:type="tool:NodeCreationDescription" name="DotStyleCreation" label="Dot Style" precondition="[container.oclIsKindOf(NodeMapping) and container.style.oclIsUndefined()/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.DotDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="ConditionalDotStyleCreation" label="Conditional Dot Style" precondition="[container.oclIsKindOf(NodeMapping)/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalNodeStyleDescription" referenceName="conditionnalStyles">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.DotDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="GaugeStyleCreationGroup" label="Gauge Styles">
+            <tools xsi:type="tool:NodeCreationDescription" name="GaugeStyleCreation" label="Gauge Style" precondition="[container.oclIsKindOf(NodeMapping) and container.style.oclIsUndefined()/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.GaugeCompositeStyleDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="ConditionalGaugeStyleCreation" label="Conditional Gauge Style" precondition="[container.oclIsKindOf(NodeMapping)/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalNodeStyleDescription" referenceName="conditionnalStyles">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.GaugeCompositeStyleDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="WorkspaceImageStyleCreationGroup" label="Workspace Image Styles">
+            <tools xsi:type="tool:NodeCreationDescription" name="WorkspaceImageStyleCreation" label="Workspace Image Style" precondition="[container.oclIsKindOf(NodeMapping) and container.style.oclIsUndefined()/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.WorkspaceImageDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="ConditionalWorkspaceImageStyleCreation" label="Conditional Workspace Image Style" precondition="[container.oclIsKindOf(NodeMapping)/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalNodeStyleDescription" referenceName="conditionnalStyles">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.WorkspaceImageDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="LozengeStyleCreationGroup" label="Lozenge Styles">
+            <tools xsi:type="tool:NodeCreationDescription" name="LozengeStyleCreation" label="Lozenge Style" precondition="[container.oclIsKindOf(NodeMapping) and container.style.oclIsUndefined()/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.LozengeNodeDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="ConditionalLozengeStyleCreation" label="Conditional Lozenge Style" precondition="[container.oclIsKindOf(NodeMapping)/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalNodeStyleDescription" referenceName="conditionnalStyles">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.LozengeNodeDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="NoteStyleCreationGroup" label="Note Styles">
+            <tools xsi:type="tool:NodeCreationDescription" name="NoteStyleCreation" label="Note Style" precondition="[container.oclIsKindOf(NodeMapping) and container.style.oclIsUndefined()/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.NoteDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="ConditionalNoteStyleCreation" label="Conditional Note Style" precondition="[container.oclIsKindOf(NodeMapping)/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalNodeStyleDescription" referenceName="conditionnalStyles">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.NoteDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="SquareStyleCreationGroup" label="Square Styles">
+            <tools xsi:type="tool:NodeCreationDescription" name="SquareStyleCreation" label="Square Style" precondition="[container.oclIsKindOf(NodeMapping) and container.style.oclIsUndefined()/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.SquareDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="ConditionalSquareStyleCreation" label="Conditional Square Style" precondition="[container.oclIsKindOf(NodeMapping)/]" nodeMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalNodeStyleDescription" referenceName="conditionnalStyles">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.SquareDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="ContainerStyleSection" label="Container Styles">
+          <ownedTools xsi:type="tool:ToolGroup" name="ParallelogramStyleGroup" label="Parallelogram Styles">
+            <tools xsi:type="tool:ContainerCreationDescription" name="ParallelogramStyleCreation" label="Parallelogram Style" precondition="[container.oclIsKindOf(ContainerMapping) and container.style.oclIsUndefined()/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ParallelogramStyle']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.ShapeContainerStyleDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ContainerCreationDescription" name="ConditionalParallelogramStyleCreation" label="Conditional Parallelogram Style" precondition="[container.oclIsKindOf(ContainerMapping)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ParallelogramStyle']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalContainerStyleDescription" referenceName="conditionnalStyles" variableName="conditionInstance">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.ShapeContainerStyleDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="WorkspaceImageStyleGroup" label="Workspace Image Styles">
+            <tools xsi:type="tool:ContainerCreationDescription" name="WorkspaceImageStyleCreation" label="Workspace Image Style" precondition="[container.oclIsKindOf(ContainerMapping) and container.style.oclIsUndefined()/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.WorkspaceImageDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ContainerCreationDescription" name="WorkspaceImageStyleCreation" label="Conditional Workspace Image Style" precondition="[container.oclIsKindOf(ContainerMapping)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalContainerStyleDescription" referenceName="conditionnalStyles" variableName="conditionInstance">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.WorkspaceImageDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ToolGroup" name="GradiantStyleGroup" label="Gradiant Styles">
+            <tools xsi:type="tool:ContainerCreationDescription" name="GradientStyleCreation" label="Gradient Style" precondition="[container.oclIsKindOf(ContainerMapping) and container.style.oclIsUndefined()/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="style.FlatContainerStyleDescription" referenceName="style"/>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:ContainerCreationDescription" name="GradientStyleCreation" label="Conditional Gradient Style" precondition="[container.oclIsKindOf(ContainerMapping)/]" containerMappings="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="description.ConditionalContainerStyleDescription" referenceName="conditionnalStyles" variableName="conditionInstance">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="style.FlatContainerStyleDescription" referenceName="style"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+        </toolSections>
+        <decorationDescriptionsSet>
+          <decorationDescriptions xsi:type="description:SemanticBasedDecoration" name="ConditionalStyleDecorator" position="NORTH_WEST" decoratorPath="/org.eclipse.sirius.diagram.ui/icons/full/obj16/ConditionalContainerStyleDescription.gif" preconditionExpression="[self.eContainer().oclIsKindOf(ConditionalStyleDescription)/]" domainClass="style.StyleDescription"/>
+        </decorationDescriptionsSet>
+        <customization>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ParallelogramStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']/@style" attributeName="labelSize" value="[self.labelSize/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ParallelogramStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']/@style" attributeName="labelFormat" value="[self.labelFormat/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']/@style" attributeName="showIcon" value="[self.showIcon/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ParallelogramStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']/@style" attributeName="iconPath" value="[self.iconPath/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ParallelogramStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']/@style" attributeName="labelAlignment" value="[self.labelAlignment/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']/@style" attributeName="labelPosition" value="[self.labelPosition/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']/@style" attributeName="hideLabelByDefault" value="[self.hideLabelByDefault/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='EllipseStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='DotStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='LozengeStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='NoteStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']/@style" attributeName="resizeKind" value="[self.resizeKind/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']/@style" attributeName="backgroundStyle" value="[self.backgroundStyle/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ParallelogramStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']/@style" attributeName="arcHeight" value="[self.arcHeight/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ParallelogramStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']/@style" attributeName="arcWidth" value="[self.arcWidth/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='ParallelogramStyle']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']/@style" attributeName="roundedCorner" value="[self.roundedCorner/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='BasicShapeStyleNode']/@style" attributeName="shape" value="[self.shape/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='GaugeStyleNode']/@style" attributeName="alignment" value="[self.alignment/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='WorkspaceImageStyleNode']/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='WorkspaceImageContainerStyle']/@style" attributeName="workspacePath" value="[self.workspacePath/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']/@style" attributeName="height" value="[self.height/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@subNodeMappings[name='SquareStyleNode']/@style" attributeName="width" value="[self.width/]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.labelBorderStyle.name = 'Label Border Style With Beveled Corner'/]">
+            <featureCustomizations xsi:type="description:EReferenceCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='ContainerContainer']/@subContainerMappings[name='GradientStyle']/@style" referenceName="labelBorderStyle">
+              <value href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.0"/>
+            </featureCustomizations>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[not self.style.oclIsUndefined()/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.0/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.1/@style" attributeName="lineStyle" value="[self.style.lineStyle/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.0/@style" attributeName="routingStyle" value="[self.style.routingStyle/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.0/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.1/@style" attributeName="sourceArrow" value="[self.style.sourceArrow/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.0/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.1/@style" attributeName="targetArrow" value="[self.style.targetArrow/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.0/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.1/@style" attributeName="foldingStyle" value="[self.style.foldingStyle/]"/>
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.0/@style //@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@edgeMappings[name='ElementBasedEdgeDef']/@conditionnalStyles.1/@style" attributeName="endsCentering" value="[self.style.endsCentering/]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.eContainmentFeature().name = 'borderedNodeMappings' and self.oclIsTypeOf(NodeMapping)/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@style" attributeName="iconPath" value="['/org.eclipse.sirius.diagram.ui/icons/obj16/BorderedNodeMapping.gif'/]"/>
+          </vsmElementCustomizations>
+          <vsmElementCustomizations xsi:type="description:VSMElementCustomization" predicateExpression="[self.eContainmentFeature().name = 'borderedNodeMappings' and self.oclIsTypeOf(NodeMappingImport)/]">
+            <featureCustomizations xsi:type="description:EAttributeCustomization" appliedOn="//@ownedViewpoints[name='']/@ownedRepresentations[name='']/@defaultLayer/@containerMappings[name='NodeContainer']/@style" attributeName="iconPath" value="['/org.eclipse.sirius.diagram.ui/icons/obj16/BorderedNodeMappingImport.gif'/]"/>
+          </vsmElementCustomizations>
+        </customization>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+  <userColorsPalettes name="DynamicColors">
+    <entries xsi:type="description:ComputedColor" name="ColorByColor" red="[if self.color.oclIsKindOf(FixedColor) then self.color.oclAsType(FixedColor).red else 0 endif/]" green="[if self.color.oclIsKindOf(FixedColor) then self.color.oclAsType(FixedColor).green else 0 endif/]" blue="[if self.color.oclIsKindOf(FixedColor) then self.color.oclAsType(FixedColor).blue else 0 endif/]"/>
+    <entries xsi:type="description:ComputedColor" name="ColorByBorderColor" red="[if self.borderColor.oclIsKindOf(FixedColor) then self.borderColor.oclAsType(FixedColor).red else 0 endif/]" green="[if self.borderColor.oclIsKindOf(FixedColor) then self.borderColor.oclAsType(FixedColor).green else 0 endif/]" blue="[if self.borderColor.oclIsKindOf(FixedColor) then self.borderColor.oclAsType(FixedColor).blue else 0 endif/]"/>
+    <entries xsi:type="description:ComputedColor" name="ColorByLabelColor" red="[if self.labelColor.oclIsKindOf(FixedColor) then self.labelColor.oclAsType(FixedColor).red else 0 endif/]" green="[if self.labelColor.oclIsKindOf(FixedColor) then self.labelColor.oclAsType(FixedColor).green else 0 endif/]" blue="[if self.labelColor.oclIsKindOf(FixedColor) then self.labelColor.oclAsType(FixedColor).blue else 0 endif/]"/>
+    <entries xsi:type="description:ComputedColor" name="ColorByBackgroundColor" red="[if self.backgroundColor.oclIsKindOf(FixedColor) then self.backgroundColor.oclAsType(FixedColor).red else 0 endif/]" green="[if self.backgroundColor.oclIsKindOf(FixedColor) then self.backgroundColor.oclAsType(FixedColor).green else 0 endif/]" blue="[if self.backgroundColor.oclIsKindOf(FixedColor) then self.backgroundColor.oclAsType(FixedColor).blue else 0 endif/]"/>
+    <entries xsi:type="description:ComputedColor" name="ColorByForegroundColor" red="[if self.foregroundColor.oclIsKindOf(FixedColor) then self.foregroundColor.oclAsType(FixedColor).red else 0 endif/]" green="[if self.foregroundColor.oclIsKindOf(FixedColor) then self.foregroundColor.oclAsType(FixedColor).green else 0 endif/]" blue="[if self.foregroundColor.oclIsKindOf(FixedColor) then self.foregroundColor.oclAsType(FixedColor).blue else 0 endif/]"/>
+    <entries xsi:type="description:ComputedColor" name="ColorByStrokeColor" red="[if self.style.strokeColor.oclIsKindOf(FixedColor) then self.style.strokeColor.oclAsType(FixedColor).red else 0 endif/]" green="[if self.style.strokeColor.oclIsKindOf(FixedColor) then self.style.strokeColor.oclAsType(FixedColor).green else 0 endif/]" blue="[if self.style.strokeColor.oclIsKindOf(FixedColor) then self.style.strokeColor.oclAsType(FixedColor).blue else 0 endif/]"/>
+  </userColorsPalettes>
+</description:Group>

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: odesign.design
+Bundle-SymbolicName: odesign.design;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: odesign.design.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.sirius,
+ org.eclipse.sirius.common.acceleo.mtl,
+ org.eclipse.sirius.diagram.ui;bundle-version="2.0.2"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6,
+ JavaSE-1.7,
+ JavaSE-1.8
