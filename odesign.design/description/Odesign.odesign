@@ -5,7 +5,7 @@
       <metamodel href="http://www.eclipse.org/sirius/diagram/1.1.0#//description"/>
       <metamodel href="http://www.eclipse.org/sirius/diagram/1.1.0#//description/style"/>
       <metamodel href="http://www.eclipse.org/sirius/diagram/1.1.0#/"/>
-      <defaultLayer name="DefaultStylesLayer" label="Default Styles Layser">
+      <defaultLayer name="DefaultStylesLayer" label="Default Styles Layer">
         <edgeMappings name="ElementBasedEdgeDef" label="Element Based Edge" sourceMapping="//@ownedViewpoints[name='StyleViewpoint']/@ownedRepresentations[name='LayerStylesDiagram']/@defaultLayer/@containerMappings[name='EdgeContainer']/@subNodeMappings[name='EdgeBeginNode']" targetMapping="//@ownedViewpoints[name='StyleViewpoint']/@ownedRepresentations[name='LayerStylesDiagram']/@defaultLayer/@containerMappings[name='EdgeContainer']/@subNodeMappings[name='EdgeEndNode']" targetFinderExpression="[self/]" sourceFinderExpression="[self/]" domainClass="description.EdgeMapping" useDomainElement="true">
           <conditionnalStyles predicateExpression="[self.style.oclIsTypeOf(EdgeStyleDescription)/]">
             <style strokeColor="//@userColorsPalettes[name='DynamicColors']/@entries[name='ColorByStrokeColor']" lineStyle="dash_dot" sizeComputationExpression="[if self.sizeComputationExpression.toInteger().oclIsInvalid() then 3 else self.sizeComputationExpression.toInteger() endif/]"/>
