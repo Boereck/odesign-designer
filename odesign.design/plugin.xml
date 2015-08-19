@@ -7,6 +7,21 @@
 	       name="Odesign">
     </component>
   </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="odesign.design.OpenOdesignEditorAction"
+           id="odesign.design.OpenInViewpointEditor">
+     </javaActions>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="odesign.design.SetSelectionOdesignEditorAction"
+           id="odesign.design.SetSelectionInViewpointEditor">
+     </javaActions>
+     
+  </extension>
   
   
   <!--
