@@ -203,14 +203,6 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Be aware that before setting the Domain Class it is expected that the used EPackages are registered in the Diagram Description." name="EClassSelectionWizzard" label="Domain Class" precondition="[container.oclIsKindOf(AbstractNodeMapping)/]" candidatesExpression="[Sequence{self}->closure(e : EObject | e.eContainer())->filter(DiagramDescription).metamodel.eClassifiers->filter(EClass)/]" message="This will set the Domain Class of a NodeMapping" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EClass.gif" windowTitle="EClass Selection Wizard">
-            <element name="element"/>
-            <containerView name="containerView"/>
-            <container name="container"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="domainClass" valueExpression="[element.oclAsType(EClass).ePackage.name.concat('.').concat(element.oclAsType(EClass).name)/]"/>
-            </initialOperation>
-          </ownedTools>
           <ownedTools xsi:type="tool:EdgeCreationDescription" name="ImportedNodeMappingCreation" label="Imported Node Mapping" precondition="[preSource &lt;> preTarget and preTarget.oclIsKindOf(NodeMapping)/]" edgeMappings="//@ownedViewpoints[name='StyleViewpoint']/@ownedRepresentations[name='LayerStylesDiagram']/@defaultLayer/@edgeMappings[name='ImportedNodeMappingEdge']" connectionStartPrecondition="[preSource.oclIsKindOf(NodeMappingImport)/]">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
@@ -527,6 +519,40 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
+          </ownedTools>
+        </toolSections>
+        <toolSections label="Semantic Elements">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Drop this element on a Node, Container, NodeImport or ContainerImport, to set the Domain Class. &#xD;&#xA;Be aware that before setting the Domain Class it is expected that the used EPackages are registered in the Diagram Description." name="EClassSelectionWizzard" label="Domain Class" precondition="[container.oclIsKindOf(AbstractNodeMapping) or (container.oclIsKindOf(EdgeMapping) and container.oclAsType(EdgeMapping).useDomainElement) /]" candidatesExpression="[Sequence{self}->closure(e : EObject | e.eContainer())->filter(DiagramDescription).metamodel.eClassifiers->filter(EClass)/]" message="This will set the Domain Class of a NodeMapping" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EClass.gif" windowTitle="EClass Selection Wizard">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="domainClass" valueExpression="[element.oclAsType(EClass).ePackage.name.concat('.').concat(element.oclAsType(EClass).name)/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Drop this element on a Relation Based Edge, to select a feature on the source element that defines the sematic reference. &#xD;&#xA;Be aware that before setting the Domain Class it is expected that the used EPackages are registered in the Diagram Description." name="EReferenceSelectionWizzard" label="Relation Based Target Reference" precondition="[container.oclIsKindOf(EdgeMapping) and container.oclAsType(EdgeMapping).sourceMapping->size()>0 and container.oclAsType(EdgeMapping).targetMapping->size()>0 and not container.oclAsType(EdgeMapping).useDomainElement/]" candidatesExpression="[Sequence{self}->closure(e : EObject | e.eContainer())->filter(DiagramDescription).metamodel.eClassifiers->filter(EClass)->select(c:EClass | container.oclAsType(EdgeMapping).sourceMapping->filter(AbstractNodeMapping).domainClass->exists(dc|dc = c.name or dc = c.ePackage.name.concat('.').concat(c.name))).eReferences->select(ref|container.oclAsType(EdgeMapping).targetMapping->filter(AbstractNodeMapping).domainClass->exists(dc2|dc2 = ref.eReferenceType.name or dc2 = ref.eReferenceType.ePackage.name.concat('.').concat(ref.eReferenceType.name)))->flatten()/]" message="This will set the Domain Class of a NodeMapping" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EReference.gif" windowTitle="EReference Selection Wizard">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="targetFinderExpression" valueExpression="['feature:'.concat(element.oclAsType(EReference).name)/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Drop this element on a Relation Based Edge, to select a feature on the source element that defines the sematic reference. &#xD;&#xA;Be aware that before setting the Domain Class it is expected that the used EPackages are registered in the Diagram Description." name="ElementSourceEReferenceSelectionWizzard" label="Element Based Source Reference" precondition="[container.oclIsKindOf(EdgeMapping) and not container.oclAsType(EdgeMapping).domainClass.oclIsUndefined() and container.oclAsType(EdgeMapping).sourceMapping->size()>0 and container.oclAsType(EdgeMapping).useDomainElement/]" candidatesExpression="[Sequence{self}->closure(e : EObject | e.eContainer())->filter(DiagramDescription).metamodel.eClassifiers->filter(EClass)->select(c:EClass | container.oclAsType(EdgeMapping).domainClass = c.name or container.oclAsType(EdgeMapping).domainClass = c.ePackage.name.concat('.').concat(c.name)).eReferences->select(ref|container.oclAsType(EdgeMapping).sourceMapping->filter(AbstractNodeMapping).domainClass->exists(dc2|dc2 = ref.eReferenceType.name or dc2 = ref.eReferenceType.ePackage.name.concat('.').concat(ref.eReferenceType.name)))->flatten()/]" message="This will set the Domain Class of a NodeMapping" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EReference.gif" windowTitle="EReference Selection Wizard">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="sourceFinderExpression" valueExpression="['feature:'.concat(element.oclAsType(EReference).name)/]"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" documentation="Drop this element on a Relation Based Edge, to select a feature on the source element that defines the sematic reference. &#xD;&#xA;Be aware that before setting the Domain Class it is expected that the used EPackages are registered in the Diagram Description." name="ElementTargetEReferenceSelectionWizzard" label="Element Based Target Reference" precondition="[container.oclIsKindOf(EdgeMapping) and not container.oclAsType(EdgeMapping).domainClass.oclIsUndefined() and container.oclAsType(EdgeMapping).targetMapping->size()>0 and container.oclAsType(EdgeMapping).useDomainElement/]" candidatesExpression="[Sequence{self}->closure(e : EObject | e.eContainer())->filter(DiagramDescription).metamodel.eClassifiers->filter(EClass)->select(c:EClass | container.oclAsType(EdgeMapping).domainClass = c.name or container.oclAsType(EdgeMapping).domainClass = c.ePackage.name.concat('.').concat(c.name)).eReferences->select(ref|container.oclAsType(EdgeMapping).targetMapping->filter(AbstractNodeMapping).domainClass->exists(dc2|dc2 = ref.eReferenceType.name or dc2 = ref.eReferenceType.ePackage.name.concat('.').concat(ref.eReferenceType.name)))->flatten()/]" message="This will set the Domain Class of a NodeMapping" iconPath="/org.eclipse.emf.ecore.edit/icons/full/obj16/EReference.gif" windowTitle="EReference Selection Wizard">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="targetFinderExpression" valueExpression="['feature:'.concat(element.oclAsType(EReference).name)/]"/>
+            </initialOperation>
           </ownedTools>
         </toolSections>
         <decorationDescriptionsSet>
