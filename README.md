@@ -1,8 +1,9 @@
 
 ## Installation
 
-Currently there is no build script, so the odesign.odesign project has to be imported into an Eclipse (Mars) with Sirius installed
+Currently there is no build script, so the odesign.odesign project has to be imported into an Eclipse (Mars, Modeling) with Sirius (3.0) installed
 and can be exported as a deployable plug-in. In future a build script and eventually an update site will be provided for installation.
+No further dependencies are needed.
 
 ## Usage
 
@@ -24,29 +25,32 @@ TODO Describe Elements to be placed.
 #### Nodes 
 
 Node, Node Import + Imported Node Mapping 
+Node Styles can be dropped in NodeMappings. These elements show how the style looks like (at least for static, non-computed configuration) 
 Semantic Element: Domain Class
 
 #### Containers
 
-Container, Container Import + Imported Container Mapping
+Container, Container Import + Imported Container Mapping 
+Container Styles can be dropped in NodeMappings. These elements show how the style looks like (at least for static, non-computed configuration) 
 Semantic Element: Domain Class
 
 #### Bordered Nodes
 
-Can be placed in Nodes, Containers or Bordered Nodes
+Can be placed in Nodes, Containers or Bordered Nodes 
+Node Styles can be dropped in BorderNodeMappings. These elements show how the style looks like (at least for static, non-computed configuration) 
 Semantic Element: Domain Class
 
 #### Edges
 
-Element Based Edge: A model element represents the edge. 
+Element Based Edge: A domain model element represents the edge. 
 Semantic Elements: Domain Class, Source Reference, Target Reference 
 
-Relation Based Edge: Represents reference of source mapping Domain Class to target mapping Domain Class
+Relation Based Edge: Represents reference of source mapping domain class to target mapping domain class 
 Semantic Elements: Target Reference 
 
 ## Known Limitations and Errors
 
-The Diagram Editor can currently not save. This is the result of a hard coded removal of .odesign files for saving in method
+The Diagram Editor can currently not save. This is the result of a hard coded removal of .odesign files in the Sirius saving method:
 ```
 org.eclipse.sirius.business.internal.session.IsModifiedSavingPolicy#computeResourcesToSave(Set<Resource> scope, Map<?, ?> options, IProgressMonitor monitor) 
 ```
@@ -59,4 +63,4 @@ Unfortunately the edited Odesign file has always to be saved so that the two edi
 Setting the EReferences for Edges via the tools in the palette currently only works for edges that do not connect other edges (neither source or target is an EdgeMapping). 
 
 Currently the editor throws some exceptions that will be shown on the standard out of the Eclipse instance, because not all icons are actually available and some model features are not found.
-This still has to be investigated.
+These problems still have to be investigated.
