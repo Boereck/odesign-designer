@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="odesign.design.feature"
+      label="Odesign Designer"
+      version="1.0.0.qualifier"
+      provider-name="Fraunhofer FOKUS">
+
+   <description url="https://github.com/Boereck/odesign-designer">
+      This editor provides a graphical modeling designer for Odesign models which are used to design own modeling editors.
+   </description>
+
+   <copyright url="https://github.com/Boereck/odesign-designer">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="odesign.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

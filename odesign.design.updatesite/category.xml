@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/odesign.design.feature_1.0.0.qualifier.jar" id="odesign.design.feature" version="1.0.0.qualifier">
+      <category name="odesign.designer"/>
+   </feature>
+   <category-def name="odesign.designer" label="Odesign Designer"/>
+   <repository-reference location="http://www.eclipse.org/modeling/amalgam/downloads/package/modeling/mars/" enabled="true" />
+</site>

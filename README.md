@@ -1,9 +1,18 @@
+## Build
+
+The build is based on Maven Tycho, so Maven 3 has to be installed on the system (https://maven.apache.org/). 
+The build can be started by calling the following command in the root directory of the odesign-designer repo:
+```bash
+mvn clean package
+```
+The zipped update site is then located at "odesign-designer/odesign.design.updatesite/target/odesign-designer-X.Y.Z-SNAPSHOT.zip"
+Where X.Y.Z is the current version number of the odesign-designer.
 
 ## Installation
 
-Currently there is no build script, so the odesign.odesign project has to be imported into an Eclipse (Mars, Modeling) with Sirius (3.0) installed
-and can be exported as a deployable plug-in. In future a build script and eventually an update site will be provided for installation.
-No further dependencies are needed.
+Currently there is no hosted update site, so the project has to be [built](#build) first. 
+The resulting update site in XYZ can be installed via the "Help -> Install New Software" main menu dialogue.
+In most operating systems the easiest way is to drop the zipped update site from the file navigator on the dialogue.
 
 ## Usage
 
@@ -62,5 +71,5 @@ Unfortunately the edited Odesign file has always to be saved so that the two edi
 
 Setting the EReferences for Edges via the tools in the palette currently only works for edges that do not connect other edges (neither source or target is an EdgeMapping). 
 
-Currently the editor throws some exceptions that will be shown on the standard out of the Eclipse instance, because not all icons are actually available and some model features are not found.
-These problems still have to be investigated.
+Currently the editor throws some exceptions that will be shown on the standard out of the Eclipse instance, because some model features are not found.
+This problems still has to be investigated.
