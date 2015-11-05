@@ -69,7 +69,8 @@ org.eclipse.sirius.business.internal.session.IsModifiedSavingPolicy#computeResou
 The properties view for the graphical editor is the default one, and by far not comparable with the one shipped with the default Odesign editor.
 It does not seem possible to reuse the one from the Odesign editor. Alternatively an action is implemented to double click on graphical elements in the 
 Odesign Designer to jump into the Odesign editor and select the element that was edited. This way the properties view of the default editor is shown.
-Unfortunately the edited Odesign file has always to be saved so that the two editors get aware of the changes performed in the other.
+Unfortunately the edited Odesign file has always to be saved so that the two editors get aware of the changes performed in the other. Note that double clicking 
+only works when having the editor installed via an update site, since this action is defined as Java code, so it cannot run in the same workspace as it is defined.
 
 Setting the EReferences for Edges via the tools in the palette currently only works for edges that do not connect other edges (neither source or target is an EdgeMapping). 
 
