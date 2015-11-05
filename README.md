@@ -73,5 +73,8 @@ Unfortunately the edited Odesign file has always to be saved so that the two edi
 
 Setting the EReferences for Edges via the tools in the palette currently only works for edges that do not connect other edges (neither source or target is an EdgeMapping). 
 
+Currently font styles cannot be shown in the designer as specified, since the way how font formats are represented was changed in Sirius 3.
+There is a related [bug entry] (https://bugs.eclipse.org/bugs/show_bug.cgi?id=470297), if this is fixed fonts can be shown as specified again.
+
 Currently the editor throws some exceptions that will be shown on the standard out of the Eclipse instance, because some model features are not found.
 This problems still has to be investigated.
