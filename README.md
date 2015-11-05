@@ -10,7 +10,9 @@ Where X.Y.Z is the current version number of the odesign-designer.
 
 ## Installation
 
-Currently there is no hosted update site, so the project has to be [built](#build) first. 
+The simplest way to use the editor is to simply clone this repository and import the project to your workspace. Then you are already able to use the editor, since Sirius editors are interpreted they can be used in the same workspace where they are defined.
+
+Alternatively you can do a propper installation via an update site. Currently there is no hosted update site, so the project has to be [built](#build) first. 
 The resulting update site in XYZ can be installed via the "Help -> Install New Software" main menu dialogue.
 In most operating systems the easiest way is to drop the zipped update site from the file navigator on the dialogue.
 
