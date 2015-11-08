@@ -841,14 +841,14 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KCtAzIGdEeWUX41Z0UIPWA" x="5" y="-13"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_KCtn0IGdEeWUX41Z0UIPWA" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KCtn0YGdEeWUX41Z0UIPWA" y="9"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KCtn0YGdEeWUX41Z0UIPWA" x="-3" y="9"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_KCtn0oGdEeWUX41Z0UIPWA" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KCtn04GdEeWUX41Z0UIPWA" x="-4" y="1"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KCtn04GdEeWUX41Z0UIPWA" x="-2" y="1"/>
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_KCtAyIGdEeWUX41Z0UIPWA"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_KCtAyYGdEeWUX41Z0UIPWA" fontName="Segoe UI" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KCtAyoGdEeWUX41Z0UIPWA" points="[4, 10, -517, 339]$[530, 10, 9, 339]$[521, -327, 0, 2]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KCtAyoGdEeWUX41Z0UIPWA" points="[4, 0, -517, 329]$[515, 0, -6, 329]$[515, -327, -6, 2]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KCtn1IGdEeWUX41Z0UIPWA" id="(0.9733333333333334,0.11702127659574468)"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KCtn1YGdEeWUX41Z0UIPWA" id="(0.03571428571428571,0.9714285714285714)"/>
           </edges>
