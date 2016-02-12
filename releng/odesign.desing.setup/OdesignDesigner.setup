@@ -111,11 +111,6 @@
             url="http://download.eclipse.org/releases/${eclipse.target.platform|lower}"/>
       </repositoryList>
     </targlet>
-    <targlet
-        name="Foo">
-      <requirement
-          name="org.eclipse.emf.transaction.sdk.feature.group"/>
-    </targlet>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
