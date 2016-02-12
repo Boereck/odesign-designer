@@ -6,11 +6,12 @@
     xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
     xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
     xmlns:predicates="http://www.eclipse.org/oomph/predicates/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="odesign.designer"
     label="Odesign Designer">
   <setupTask
@@ -86,8 +87,8 @@
       xsi:type="setup.targlets:TargletTask"
       id="odesign.design.targlets">
     <targlet
-        name="${scope.project.label}"
-        activeRepositoryList="${eclipse.target.platform}">
+        name="Odesign Designer"
+        activeRepositoryList="Sirius">
       <requirement
           name="org.eclipse.sirius.runtime.feature.group"
           versionRange="[3.1.4,3.2.0)"/>
@@ -100,53 +101,58 @@
       <requirement
           name="org.eclipse.sirius.runtime.ide.ui.feature.group"
           versionRange="[3.1.4,3.2.0)"/>
-      <sourceLocator
-          rootFolder="${odesign.designer.git.clone.location/plugins}"/>
-      <sourceLocator
-          rootFolder="${odesign.designer.git.clone.location/features}"/>
-      <sourceLocator
-          rootFolder="${odesign.designer.git.clone.location/p2repositories}"/>
-      <sourceLocator
-          rootFolder="${odesign.designer.git.clone.location/releng}"/>
       <repositoryList
           name="Sirius">
         <repository
             url="http://download.eclipse.org/sirius/updates/releases/3.1.4/${eclipse.target.platform|lower}"/>
         <repository
             url="http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository/"/>
+        <repository
+            url="http://download.eclipse.org/releases/${eclipse.target.platform|lower}"/>
       </repositoryList>
     </targlet>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="${scope.project.name}">
+        name="${scope.project.label}">
       <predicate
           xsi:type="predicates:LocationPredicate"
-          pattern="plugins/.*"/>
+          pattern=".*/plugins/.*"/>
     </workingSet>
     <workingSet
-        name="${scope.project.name} Update Site">
+        name="${scope.project.label} Update Site">
       <predicate
           xsi:type="predicates:LocationPredicate"
-          pattern="features/.*"/>
+          pattern=".*/features/.*"/>
       <predicate
           xsi:type="predicates:LocationPredicate"
-          pattern="p2repositories/.*"/>
+          pattern=".*/p2repositories/.*"/>
     </workingSet>
     <workingSet
-        name="${scope.project.name} Build">
+        name="${scope.project.label} Build">
       <predicate
           xsi:type="predicates:LocationPredicate"
-          pattern="releng/.*"/>
+          pattern=".*/releng/.*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
   <setupTask
       xsi:type="setup:EclipseIniTask"
       option="-Doomph.redirection.accelleo="
-      value="https://raw.githubusercontent.com/Boereck/odesign-designer/master/releng/odesign.design.setup/OdesignDesigner.setup->${odesign.designer.git.clone.location|uri}/releng/odesign.design.setup/Acceleo.setup"
+      value="https://raw.githubusercontent.com/Boereck/odesign-designer/master/releng/odesign.design.setup/OdesignDesigner.setup->${odesign.designer.git.clone.location|uri}/releng/odesign.design.setup/OdesignDesigner.setup"
       vm="true"/>
+  <setupTask
+      xsi:type="projects:ProjectsImportTask">
+    <sourceLocator
+        rootFolder="${odesign.designer.git.clone.location/plugins}"/>
+    <sourceLocator
+        rootFolder="${odesign.designer.git.clone.location/features}"/>
+    <sourceLocator
+        rootFolder="${odesign.designer.git.clone.location/p2repositories}"/>
+    <sourceLocator
+        rootFolder="${odesign.designer.git.clone.location/releng}"/>
+  </setupTask>
   <stream name="master"/>
   <logicalProjectContainer
       xsi:type="setup:ProjectCatalog"
