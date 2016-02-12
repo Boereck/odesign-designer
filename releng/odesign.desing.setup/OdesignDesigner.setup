@@ -111,6 +111,11 @@
             url="http://download.eclipse.org/releases/${eclipse.target.platform|lower}"/>
       </repositoryList>
     </targlet>
+    <targlet
+        name="Uiuiui">
+      <requirement
+          name="org.eclipse.emf.sdk.feature.group"/>
+    </targlet>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
@@ -141,6 +146,11 @@
       xsi:type="setup:EclipseIniTask"
       option="-Doomph.redirection.odesign-designer="
       value="https://github.com/Boereck/odesign-designer/raw/master/releng/odesign.desing.setup/OdesignDesigner.setup->${odesign.designer.git.clone.location|uri}/releng/odesign.desing.setup/OdesignDesigner.setup"
+      vm="true"/>
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      option="-Doomph.redirection.odesign-designer-raw="
+      value="https://raw.githubusercontent.com/Boereck/odesign-designer/master/releng/odesign.desing.setup/OdesignDesigner.setup->${odesign.designer.git.clone.location|uri}/releng/odesign.desing.setup/OdesignDesigner.setup"
       vm="true"/>
   <setupTask
       xsi:type="projects:ProjectsImportTask">
