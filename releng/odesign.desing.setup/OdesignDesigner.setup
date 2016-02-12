@@ -111,11 +111,6 @@
             url="http://download.eclipse.org/releases/${eclipse.target.platform|lower}"/>
       </repositoryList>
     </targlet>
-    <targlet
-        name="Uiuiui">
-      <requirement
-          name="org.eclipse.emf.sdk.feature.group"/>
-    </targlet>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
