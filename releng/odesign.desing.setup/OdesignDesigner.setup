@@ -140,7 +140,7 @@
   <setupTask
       xsi:type="setup:EclipseIniTask"
       option="-Doomph.redirection.odesign-designer="
-      value="https://github.com/Boereck/odesign-designer/raw/master/releng/odesign.desing.setup/OdesignDesigner.setup->${odesign.designer.git.clone.location|uri}/releng/odesign.design.setup/OdesignDesigner.setup"
+      value="https://github.com/Boereck/odesign-designer/raw/master/releng/odesign.desing.setup/OdesignDesigner.setup->${odesign.designer.git.clone.location|uri}/releng/odesign.desing.setup/OdesignDesigner.setup"
       vm="true"/>
   <setupTask
       xsi:type="projects:ProjectsImportTask">
