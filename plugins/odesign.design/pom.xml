@@ -6,13 +6,13 @@
   	<parent>
 	    <groupId>odesign-designer</groupId>
 	    <artifactId>odesign-designer-parent</artifactId>
-	    <relativePath>../pom.xml</relativePath>
+	    <relativePath>../../pom.xml</relativePath>
 	    <version>0.0.1</version>
 	</parent>
 
   <groupId>odesign-designer</groupId>
-  <artifactId>odesign.design-mars</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
-  <packaging>eclipse-target-definition</packaging>
+  <artifactId>odesign.design</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>eclipse-plugin</packaging>
 
 </project>

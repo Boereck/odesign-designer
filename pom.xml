@@ -24,11 +24,13 @@
 	</properties>
 	
 	<modules>
-		<module>odesign.design</module>
-		<module>odesign.odesing.feature</module>
-		<module>odesign.design.updatesite</module>
-		<module>odesign.design.target.mars</module>
+		<module>./plugins/odesign.design</module>
+		<module>./features/odesign.odesing.feature</module>
+		<module>./p2repositories/odesign.design.updatesite</module>
+		<module>./releng/odesign.design.target.mars</module>
 	</modules>
+
+	<!-- TODO create profiles for target-platform-configuration config activated by target switch -->
 
 	<build>
 		<plugins>

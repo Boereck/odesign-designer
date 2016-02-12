@@ -4,14 +4,14 @@ Bundle-Name: odesign.design
 Bundle-SymbolicName: odesign.design;singleton:=true
 Bundle-Version: 0.0.1.qualifier
 Bundle-Activator: odesign.design.Activator
-Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime,
+Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.sirius,
  org.eclipse.sirius.common.acceleo.mtl,
- org.eclipse.sirius.diagram.ui;bundle-version="2.0.2",
  org.eclipse.sirius.common;bundle-version="3.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7,
  JavaSE-1.8
 Import-Package: org.eclipse.emf.common.ui,
- org.eclipse.sirius.common.ui.tools.api.editor;version="2.0.4"
+ org.eclipse.sirius.common.ui.tools.api.editor;version="2.0.4",
+ org.eclipse.ui,
+ org.eclipse.ui.plugin

@@ -17,7 +17,7 @@
 	<parent>
 	    <groupId>odesign-designer</groupId>
 	    <artifactId>odesign-designer-parent</artifactId>
-	    <relativePath>../pom.xml</relativePath>
+	    <relativePath>../../pom.xml</relativePath>
 	    <version>0.0.1</version>
 	</parent>
 
